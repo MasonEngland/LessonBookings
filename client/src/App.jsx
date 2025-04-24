@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route } from 'react-router'
 import Home from './pages/home';
 import About from './pages/about';
 import Lesson from './pages/lesson';
+import LessonsPage from './pages/lessons';
 import UserContext from '../context/userContext';
 import { useEffect, useState} from 'react';
 
@@ -46,7 +47,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/calendar" element={<div>Calendar</div>} />
           <Route path="/book" element={<Lesson />} />
-          <Route path="/lessons" element={<div>Lessons</div>} />
+          <Route path="/lessons" element={<LessonsPage />} />
           {/* Add more routes here */}
         </Routes>
       </BrowserRouter>

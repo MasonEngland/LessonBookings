@@ -10,7 +10,7 @@ export default function Topbar({page}) {
     const user = useContext(UserContext);
 
     if (user != null) {
-        lastElement = <a href="" className={styles.navLink}>Lessons</a>;
+        lastElement = <Link to="/lessons" className={styles.navLink + " " + (page == 4 ? styles.selected : "")}>Lessons</Link>;
     }
 
     const clickHandler = () => {

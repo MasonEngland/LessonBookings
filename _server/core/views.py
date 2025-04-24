@@ -54,14 +54,23 @@ def book_lesson(req):
 
 @login_required
 def cancel_lesson(req, lesson_id):
-    if not req.method == "POST":
-        return redirect("/not-found")
+    if not req.method == "DELETE":
+        response = JsonResponse({ "success": False, "message": "Invalid request method" })
+        response.status_code = 400
+        
+    if not req.user.is_authenticated:
+        response = JsonResponse({ "success": False, "message": "User not authenticated" })
+        response.status_code = 401
+        return response
     try:
+        print(lesson_id)
         lesson = Lesson.objects.get(id=lesson_id)
         lesson.delete()
     except Lesson.DoesNotExist:
         return HttpResponseBadRequest("Lesson not found")
-    return redirect("/lessons")
+    response = HttpResponse("Lesson cancelled successfully")
+    response.status_code = 200
+    return response
 
 @login_required
 def get_account(req):
@@ -100,8 +109,9 @@ def get_lessons(req):
             "id": lesson.id,
             "name": lesson.name,
             "startTime": lesson.startTime,
-            "endTime": lesson.endTime,
+            "date": lesson.date,
             "duration": lesson.duration,
+            "price": lesson.price
         })
     return JsonResponse(lessons_list, safe=False)
         
