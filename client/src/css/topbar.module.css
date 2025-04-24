@@ -1,0 +1,47 @@
+.topbar {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    height: 80px;
+}
+  
+.topbar-logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+  
+.navLink {
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 18px;
+    color: black;
+    padding: 8px
+}
+  
+.navLink:hover {
+    text-decoration: underline;
+}
+
+.topbarLinks > .navLink {
+    margin-left: 60px;
+}
+
+
+.selected {
+    border: 2px solid black;
+}
+
+.button {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

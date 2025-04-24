@@ -1,0 +1,17 @@
+.container {
+    background-color: rgb(109, 109, 109);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.container > * {
+    margin: 40px;
+}
+
+.h2 {
+    text-align: center;
+}

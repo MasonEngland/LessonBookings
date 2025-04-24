@@ -7,7 +7,7 @@ def asset_proxy_middleware(next):
         # checking for .
         if "." in request.path:
             # Proxy request to asset server
-            response = requests.get(f"{os.environ.get('ASSET_URL')}{request.path.replace('/static', '')}", stream=True)
+            response = requests.get(f"{os.environ.get('ASSET_URL')}{request.path.replace('/client', '')}", stream=True)
 
             # Stream response
             return StreamingHttpResponse(

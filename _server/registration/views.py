@@ -31,4 +31,4 @@ def sign_in(req):
 
 def logout_view(request):
     logout(request)
-    return JsonResponse({"success": True })
+    return redirect("/")
