@@ -19,3 +19,16 @@ class Lesson(models.Model):
             self.price = 0.00
         super().save(*args, **kwargs)
 
+class StudioEvent(models.Model):
+    name = models.CharField(max_length=100)
+    start = models.CharField(max_length=100)
+    end = models.CharField(max_length=100, null=True)
+    allDay = models.BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        if self.allDay:
+            self.end = None
+        super().save(*args, **kwargs)
+
+
+

@@ -11,5 +11,6 @@ urlpatterns = [
     path('lessons/', view=views.index, name="index"),
     path('book/', view=views.index, name="index"),
     path('calendar/', view=views.index, name="index"),
-    
+    path('api/get_studio_events/', view=views.get_studio_events, name="get_studio_events"),
+    path('api/add_studio_event/', view=views.add_studio_event, name="add_studio_event"),
 ]

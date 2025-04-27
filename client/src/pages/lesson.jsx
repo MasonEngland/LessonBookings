@@ -34,7 +34,12 @@ export default function lesson() {
         };
 
         const response = await fetch('/api/lessons/book/', options)
-        navigate("/lessons");
+        if (response.redirected) {
+            location.href = response.url;
+        }
+        else {
+            navigate('/lessons');
+        }
     }
 
 

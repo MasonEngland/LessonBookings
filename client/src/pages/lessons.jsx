@@ -55,7 +55,7 @@ const LessonsPage = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
     else {
-        location.reload();
+      location.reload();
     }
   }
 
